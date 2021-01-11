@@ -55,7 +55,7 @@ inquirer.prompt([
   {
     type: 'input',
     name: 'reachMe',
-    message: 'List any other ways you can be reached other than GitHub and email',
+    message: 'Describe any other ways you can be reached other than GitHub and email',
     
   },
 ]);
@@ -68,6 +68,13 @@ const createReadMe = (answers) =>
 ${answers.description}
 
 ## Table of Contents
+* [Project Description](#project-description)
+* [Installation Instructions](#installation-instructions)
+* [Usage Information](#usage-information)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Test Instructions](#test-instructions)
+* [Questions](#questions)
+
 
 ## Installation Instructions
 ${answers.installation}
@@ -82,9 +89,10 @@ ${answers.contributing}
 ${answers.tests}
 
 ## Questions
-https://github.com/${answers.gitHub}
-${answers.email}
-${answers.reachMe}
+If you have any questions feel free to contact me using the information below:
+* GitHub: https://github.com/${answers.gitHub}
+* Email: ${answers.email}
+* Other ways to reach me: ${answers.reachMe}
 `
 
 questions()
