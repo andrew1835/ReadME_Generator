@@ -58,16 +58,32 @@ inquirer.prompt([
     message: 'Describe any other ways you can be reached other than GitHub and email',
     
   },
+  {
+    type: 'list',
+    name: 'license',
+    message: 'Which license would you like for this application?',
+    choices: ["GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License", "Boost Software License 1.0", "The Unlicense","No license"]
+    
+  },
+  
 ]);
+
+
+
 
 
 const createReadMe = (answers) =>
 `# ${answers.title}
 
+## License
+License type: ${answers.license}
+
+
 ## Project Description
 ${answers.description}
 
 ## Table of Contents
+* [License](#license)
 * [Project Description](#project-description)
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
@@ -98,49 +114,9 @@ If you have any questions feel free to contact me using the information below:
 questions()
   .then((answers) => writeFileAsync('README.md', createReadMe(answers)))
   .then(() => console.log('Successfully wrote to README.md'))
-  .catch((err) => console.error(err));
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
+  .catch((err) => console.error(err))
+  
+  
 
 
-
-
-
-
-
-
-
-
-// DONE: Install all the packages
-// DONE: Declare the packages at the top of the page
-// TODO: Prompt the user in node with all the questions that are outlined in the description for this assignment
-// TODO: Create a README template 
-// TODO: Copy that template to a variable using backticks 
-// TODO: Add a license  the README through Node
-// TODO: Add a Questions section to the README
-// TODO: Add a table of contents section
-// TODO: Generate a README file
-// TODO: Push the information from the variable onto the generated README file
-// TODO: Do a Screencastify video 
-// TODO: Submit everything, making sure that you've met all the requirements for the generator and for the sumbission guidelines 
-
-// ACTIVITY 20 and 28 will be useful
-
-
-
-// TODO:
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
+// If I could've grabbed the license input here in JS, I would've written an if else statement where, if they choose a certain license type, you rewrite the README constant so that it has the badge for that specific license type. Do elses until I've gone through every license-badge scenario. I would've done the same thing for license description. 
