@@ -17,4 +17,26 @@ Link to GitHub repo: https://github.com/andrew1835/ReadME_Generator
 Screen Capture link: <a href="https://drive.google.com/file/d/1FBGryhANBHzmr5CrTGVGtjA5iKdf5ng2/view" target = "_blank">Click Here</a>
 
 # Screenshots
+This first screenshot is a sample of some of the code I used to write this program:
 
+<img src = "Develop/Assets/Sample_of_Code.jpg" alt = "Sample of code">
+<hr><br>
+
+This second screenshot shows what happens right after you type "node index.js" into the integrated terminal: 
+
+<img src = "Develop/Assets/Question_Prompt.jpg" alt = "Node first question prompt">
+<hr><br>
+
+This third screenshot shows what happens when you finish answering the questions in the integrated terminal. You can see that a new README file has appeared in the top left: 
+
+<img src = "Develop/Assets/Node_Complete.jpg" alt = "Completed Node questions">
+<hr><br>
+
+This fourth screenshot is a sample that shows the content of the README file that has been created based off user input: 
+
+<img src = "Develop/Assets/Generated_ReadME.jpg" alt = "Sample of the README file that was generated from Node inputs">
+<hr><br>
+
+This final screenshot shows what the README file looks like when viewed in Preview:
+
+<img src = "Develop/Assets/README_Preview.jpg" alt = "Sample of README file viewed in Preview">
