@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
+const { create } = require('domain');
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -41,14 +42,39 @@ inquirer.prompt([
 ]);
 
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const createReadMe = (answers) =>
+`
+# ${answers.title}
 
-// TODO: Create a function to initialize app
-function init() {}
+## Project Description
+${answers.description}
 
-// Function call to initialize app
-init();
+## Installation Instructions
+${answers.installation}
+
+## Usage Information
+${answers.usage}
+
+## Contribution Guidelines
+${answers.contributing}
+
+## Test Instructions
+${answers.tests}
+`
+
+questions()
+  .then((answers) => writeFileAsync('README.md', createReadMe(answers)))
+  .then(() => console.log('Successfully wrote to README.md'))
+  .catch((err) => console.error(err));
+
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
 
 
 
