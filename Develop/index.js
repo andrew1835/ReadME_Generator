@@ -38,16 +38,36 @@ inquirer.prompt([
     type: 'input',
     name: 'tests',
     message: 'What are the test instructions for your project',
+    
+  },
+  {
+    type: 'input',
+    name: 'gitHub',
+    message: 'What is your GitHub username?',
+    
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email?',
+    
+  },
+  {
+    type: 'input',
+    name: 'reachMe',
+    message: 'List any other ways you can be reached other than GitHub and email',
+    
   },
 ]);
 
 
 const createReadMe = (answers) =>
-`
-# ${answers.title}
+`# ${answers.title}
 
 ## Project Description
 ${answers.description}
+
+## Table of Contents
 
 ## Installation Instructions
 ${answers.installation}
@@ -60,6 +80,11 @@ ${answers.contributing}
 
 ## Test Instructions
 ${answers.tests}
+
+## Questions
+https://github.com/${answers.gitHub}
+${answers.email}
+${answers.reachMe}
 `
 
 questions()
@@ -99,3 +124,15 @@ questions()
 // TODO: Submit everything, making sure that you've met all the requirements for the generator and for the sumbission guidelines 
 
 // ACTIVITY 20 and 28 will be useful
+
+
+
+// TODO:
+// WHEN I choose a license for my application from a list of options
+// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+// WHEN I enter my GitHub username
+// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+// WHEN I enter my email address
+// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+// WHEN I click on the links in the Table of Contents
+// THEN I am taken to the corresponding section of the README
